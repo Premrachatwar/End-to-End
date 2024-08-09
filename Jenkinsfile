@@ -23,7 +23,7 @@ pipeline {
                 script {
                     sonarScanner {
                         properties([
-                            "sonar.projectKey": "your_project_key",
+                            "sonar.projectKey": "1d21ab200eac75a0bb58db42333ef86a9aed6d62859a7c18130eaf9d11e4ef75",
                             "sonar.sources": "src/main/java",
                             "sonar.java.binaries": "target/classes"
                         ])
@@ -34,7 +34,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("your_dockerhub_premrachatwar/your_app_name:${env.BUILD_ID}").push()
+                    docker.build("your_dockerhub_premrachatwar/shweta:${env.BUILD_ID}").push()
                 }
             }
         }
